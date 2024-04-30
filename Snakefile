@@ -2,8 +2,6 @@ configfile: "config/rapr.yaml"
 
 include: "workflow/rules/common.smk"
 
-include: "workflow/rules/faspt.smk"
-
 include: "workflow/rules/clone_filter.smk"
 
 include: "workflow/rules/process_radtags.smk"

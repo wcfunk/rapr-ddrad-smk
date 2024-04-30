@@ -1,16 +1,16 @@
-configfile: "config/rapr.yaml"
+configfile: "rapr-ddrad-smk/config/rapr.yaml"
 
-include: "workflow/rules/common.smk"
+include: "rapr-ddrad-smk/workflow/rules/common.smk"
 
-include: "workflow/rules/clone_filter.smk"
+include: "rapr-ddrad-smk/workflow/rules/clone_filter.smk"
 
-include: "workflow/rules/process_radtags.smk"
+include: "rapr-ddrad-smk/workflow/rules/process_radtags.smk"
 
 # Stacks de novo pipeline
-include: "workflow/rules/ustacks.smk"
-include: "workflow/rules/cstacks.smk"
-include: "workflow/rules/sstacks.smk"
-include: "workflow/rules/tsv2bam.smk"
-include: "workflow/rules/gstacks.smk"
+include: "rapr-ddrad-smk/workflow/rules/ustacks.smk"
+include: "rapr-ddrad-smk/workflow/rules/cstacks.smk"
+include: "rapr-ddrad-smk/workflow/rules/sstacks.smk"
+include: "rapr-ddrad-smk/workflow/rules/tsv2bam.smk"
+include: "rapr-ddrad-smk/workflow/rules/gstacks.smk"
 
-include: "workflow/rules/populations.smk"
+include: "rapr-ddrad-smk/workflow/rules/populations.smk"

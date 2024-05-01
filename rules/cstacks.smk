@@ -3,7 +3,7 @@
 
 rule cstacks:
     input:
-	directory="results/stacks_denovo"
+	"results/stacks_denovo/ustacks/"
     output:
 	"results/stacks_denovo/catalog.tags.tsv.gz",
 	"results/stacks_denovo/catalog.snps.tsv.gz",

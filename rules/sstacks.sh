@@ -14,7 +14,7 @@ rule sstacks:
         mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
-        "results/logs/stacks_denovo/sstacks/{sample}.log"
+        "results/logs/stacks_denovo/sstacks/sstacks.log"
     shell:
 	" (sstacks -P {input.directory} -p 24	"
 	" -M data/popmap_lib2_6frogs.tsv)	"

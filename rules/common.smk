@@ -5,6 +5,8 @@ sample_table=pd.read_table(rapr["sample_info"], dtype="str").set_index(
     "sample", drop=False
 )
 
+### Transfer values from the yaml and tabular config to
+### our familiar list
 # Populate our SAMPLES list from the sample_table using a little
 # pandas syntax
 SAMPLES=sample_table["sample"].unique().tolist()

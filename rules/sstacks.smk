@@ -2,11 +2,14 @@
 
 rule sstacks:
     input:
-	directory="results/stacks_denovo"
+	"results/stacks_denovo/cstacks/catalog.tags.tsv.gz",
+	"results/stacks_denovo/cstacks/catalog.snps.tsv.gz",
+	"results/stacks_denovo/cstacks/catalog.alleles.tsv.gz",
+	"results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
     output:
-	"results/stacks_denovo/{sample}.matches.tsv.gz",
-	"results/stacks_denovo/sstacks.out",
-	"results/stacks_denovo/sstacks.err"
+	"results/stacks_denovo/sstacks/{sample}.matches.tsv.gz",
+	"results/stacks_denovo/sstacks/sstacks.out",
+	"results/stacks_denovo/sstacks/sstacks.err"
     conda:
         "envs/stacks.yaml"
     resources:
@@ -18,4 +21,5 @@ rule sstacks:
     shell:
 	" (sstacks -P {input.directory} -p 24	"
 	" -M data/popmap_lib2_6frogs.tsv)	"
+	" -o results/stacks_denovo/sstacks/	"
 	" 2> {log}				"

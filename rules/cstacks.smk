@@ -10,7 +10,7 @@ rule cstacks:
 	"results/stacks_denovo/cstacks/catalog.tags.tsv.gz",
 	"results/stacks_denovo/cstacks/catalog.snps.tsv.gz",
 	"results/stacks_denovo/cstacks/catalog.alleles.tsv.gz",
-	"results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
+	"results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz",
 	"results/stacks_denovo/cstacks/cstacks.out",
 	"results/stacks_denovo/cstacks/cstacks.err"
     conda:

@@ -5,10 +5,10 @@ rule process_radtags:
         in1="results/clone_filter/{sample}_1.1.fq.gz",
         in2="results/clone_filter/{sample}_2.2.fq.gz",
     output:
-        R1="{sample}_1.1.1.fq.gz",
-	R1rem="{sample}_1.1.rem.1.fq.gz",
-        R2="{sample}_2.2.2.fq.gz",
-        R2rem="{sample}_2.2.rem.2.fq.gz"
+        R1="results/process_radtags/{sample}_1.1.1.fq.gz",
+	R1rem="/process_radtags/{sample}_1.1.rem.1.fq.gz",
+        R2="/process_radtags/{sample}_2.2.2.fq.gz",
+        R2rem="/process_radtags/{sample}_2.2.rem.2.fq.gz"
     conda:
         "envs/stacks.yaml"
     params:

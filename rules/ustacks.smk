@@ -4,11 +4,11 @@ rule ustacks:
     input:
         R1="results/process_radtags/{sample}.1.fq.gz",
     output:
-	tags="results/stacks_denovo/{sample}.tags.tsv.gz	
-	snps="results/stacks_denovo/{sample}.snps.tsv.gz
-	alleles="results/stacks_denovo/{sample}.alleles.tsv.gz
-	out="results/stacks_denovo/ustacks_{sample}.out
-	err="results/stacks_denovo/ustacks_{sample}.err
+	tags="results/stacks_denovo/{sample}.tags.tsv.gz",	
+	snps="results/stacks_denovo/{sample}.snps.tsv.gz",
+	alleles="results/stacks_denovo/{sample}.alleles.tsv.gz",
+	out="results/stacks_denovo/ustacks_{sample}.out",
+	err="results/stacks_denovo/ustacks_{sample}.err"
     conda:
         "envs/stacks.yaml"
     resources:

@@ -15,8 +15,6 @@ rule clone_filter:
     log:
         "results/logs/clone_filter/{sample}.log"
     shell:
-        "(clone_filter -i gzfastq -1 {input.fq1} -2 {input.fq2} --inline_null --oligo_len_2 10 -o results/clone_filter/) 2> {log}"
-     
         " (clone_filter -i gzfastq                "
         "       -1 {input.fq1} -2 {input.fq2}     "
         "       --inline-null --oligo-len-1 10    "

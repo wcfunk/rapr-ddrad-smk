@@ -24,4 +24,4 @@ def get_fastqs(wildcards):
 # for the first rule in the Snakefile, so we define the first
 # rule to ask for results/stacks_denovo/populations.snps.vcf
 rule all:
-  input: "results/stacks_denovo/populations.snps.vcf"
+  input: "results/populations/populations.snps.vcf"

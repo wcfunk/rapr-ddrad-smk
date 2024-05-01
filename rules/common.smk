@@ -15,9 +15,10 @@ SAMPLES=sample_table["sample"].unique().tolist()
 # define a function to get the fastq path from the sample_table. This
 # returns it as a dict, so we need to unpack it in the rule
 def get_fastqs(wildcards):
-  fq1=sample_table.loc[ wildcards.sample, "fq1" ]
-  fq2=sample_table.loc[ wildcards.sample, "fq2" ]
-  return {"r1": fq1, "r2": fq2 }
+  return {
+    "fq2": libs.loc[wildcards.lib, "fq2"],
+    "fq1": libs.loc[wildcards.lib, "fq1"]
+  }
 
 ### Specify rule "all"
 # By default, Snakemake tries to create the input files needed

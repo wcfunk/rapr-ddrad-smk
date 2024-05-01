@@ -2,8 +2,10 @@
 
 rule suffix_trim:
     input:
-        "{sample}_1.1.1.fq.gz"
+	R1extraones="results/process_radtags/{sample}_1.1.1.fq.gz",
+	R2extratwos="results/process_radtags/{sample}_2.2.2.fq.gz"
     output:
-        "{sample}.1.fq.gz"
+        R1="results/process_radtags/{sample}.1.fq.gz",
+	R2="results/process_radtags/{sample}.2.fq.gz"
     shell:
-        "mv {input} {output}"
+        "cp {input} {output}"

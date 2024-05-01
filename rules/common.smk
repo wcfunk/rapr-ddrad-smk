@@ -1,7 +1,7 @@
 import pandas as pd
 
 ### Get the sample info table read into a pandas data frame
-sample_table=pd.read_table(rapr["sample_info"], dtype="str").set_index(
+sample_table=pd.read_table(config["sample_info"], dtype="str").set_index(
     "sample", drop=False
 )
 

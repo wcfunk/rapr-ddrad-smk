@@ -2,3 +2,7 @@
 sample_info: "rapr-ddrad-smk/data/sample_info_lib2.tsv"
 
 popmap: "rapr-ddrad-smk/data/popmap_lib2_6frogs.tsv"
+
+process_radtags:
+    enzyme1: ecoRI
+    enzyme2: nspI

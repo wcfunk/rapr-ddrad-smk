@@ -3,11 +3,11 @@
 
 rule tsv2bam:
     input:
-	directory="results/stacks_denovo"
+	"results/stacks_denovo/sstacks/{sample}.matches.tsv.gz"
     output:
-	"results/stacks_denovo/{sample}.matches.bam",
-	"results/stacks_denovo/tsv2bam.out",
-	"results/stacks_denovo/tsv2bam.err"
+	"results/stacks_denovo/sstacks/{sample}.matches.bam",
+	"results/stacks_denovo/sstacks/tsv2bam.out",
+	"results/stacks_denovo/sstacks/tsv2bam.err"
     conda:
         "envs/stacks.yaml"
     resources:

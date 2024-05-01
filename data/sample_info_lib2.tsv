@@ -1,4 +1,4 @@
-lib	unit	sample_id	fq1	fq2
+lib	unit	sample	fq1	fq2
 lib2	1	OSF_E246	data/fastqs/OSF_E246_1.fq.gz	data/fastqs/OSF_E246_2.fq.gz
 lib2	1	OSF_E348	data/fastqs/OSF_E348_1.fq.gz	data/fastqs/OSF_E348_2.fq.gz
 lib2	1	OSF_E356	data/fastqs/OSF_E356_1.fq.gz	data/fastqs/OSF_E356_2.fq.gz

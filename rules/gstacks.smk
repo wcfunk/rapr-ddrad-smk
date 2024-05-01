@@ -3,12 +3,12 @@
 
 rule gstacks:
     input:
-	directory="results/stacks_denovo"
+	"results/stacks_denovo/sstacks/{sample}.matches.bam"
     output:
-	"results/stacks_denovo/catalog.fa.gz",
-        "results/stacks_denovo/catalog.calls",
-	"results/stacks_denovo/gstacks.out",
-	"results/stacks_denovo/gstacks.err"
+	"results/stacks_denovo/gstacks/catalog.fa.gz",
+        "results/stacks_denovo/gstacks/catalog.calls",
+	"results/stacks_denovo/gstacks/gstacks.out",
+	"results/stacks_denovo/gstacks/gstacks.err"
     conda:
         "envs/stacks.yaml"
     resources:
@@ -20,5 +20,5 @@ rule gstacks:
     shell:
 	" (gstacks -P {input.directory} -t 12	"
 	" -M data/popmap_lib2_6frogs.tsv)	"
-	" -O results/stacks_denovo)		"
+	" -O results/stacks_denovo/gstacks/)	"
 	" 2> {log}				"

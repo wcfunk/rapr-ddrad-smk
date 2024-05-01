@@ -5,6 +5,7 @@ include: "rapr-ddrad-smk/rules/common.smk"
 include: "rapr-ddrad-smk/rules/clone_filter.smk"
 
 include: "rapr-ddrad-smk/rules/process_radtags.smk"
+include: "rapr-ddrad-smk/rules/suffix_trim.smk"
 
 # Stacks de novo pipeline
 include: "rapr-ddrad-smk/rules/ustacks.smk"

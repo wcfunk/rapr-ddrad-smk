@@ -3,14 +3,16 @@
 
 rule cstacks:
     input:
-	"results/stacks_denovo/ustacks/"
+	tags="results/stacks_denovo/ustacks/{sample}.tags.tsv.gz",	
+	snps="results/stacks_denovo/ustacks/{sample}.snps.tsv.gz",
+	alleles="results/stacks_denovo/ustacks/{sample}.alleles.tsv.gz"
     output:
-	"results/stacks_denovo/catalog.tags.tsv.gz",
-	"results/stacks_denovo/catalog.snps.tsv.gz",
-	"results/stacks_denovo/catalog.alleles.tsv.gz",
-	"results/stacks_denovo/catalog.sample_list.tsv.gz"
-	"results/stacks_denovo/cstacks.out",
-	"results/stacks_denovo/cstacks.err"
+	"results/stacks_denovo/cstacks/catalog.tags.tsv.gz",
+	"results/stacks_denovo/cstacks/catalog.snps.tsv.gz",
+	"results/stacks_denovo/cstacks/catalog.alleles.tsv.gz",
+	"results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
+	"results/stacks_denovo/cstacks/cstacks.out",
+	"results/stacks_denovo/cstacks/cstacks.err"
     conda:
         "envs/stacks.yaml"
     resources:
@@ -21,5 +23,6 @@ rule cstacks:
         "results/logs/stacks_denovo/cstacks/cstacks.log"
     shell:
 	" (cstacks -P {input.directory} -p 24	"
+	" -o results/stacks_denovo/cstacks/	"
 	" -M data/popmap_lib2_6frogs.tsv	"
 	" -n 3) 2> {log}			"

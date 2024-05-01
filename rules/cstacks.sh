@@ -5,15 +5,15 @@ rule cstacks:
     input:
 	directory="results/stacks_denovo"
     output:
-	catalog-tags="results/stacks_denovo/catalog.tags.tsv.gz",
-	catalog-snps="results/stacks_denovo/catalog.snps.tsv.gz",
-	catalog-alleles="results/stacks_denovo/catalog.alleles.tsv.gz",
-	catalog-list="results/stacks_denovo/catalog.sample_list.tsv.gz"
-	cstacks-out="results/stacks_denovo/cstacks.out",
-	cstacks-err="results/stacks_denovo/cstacks.err"
+	"results/stacks_denovo/catalog.tags.tsv.gz",
+	"results/stacks_denovo/catalog.snps.tsv.gz",
+	"results/stacks_denovo/catalog.alleles.tsv.gz",
+	"results/stacks_denovo/catalog.sample_list.tsv.gz"
+	"results/stacks_denovo/cstacks.out",
+	"results/stacks_denovo/cstacks.err"
     conda:
         "envs/stacks.yaml"
- resources:
+    resources:
 	cpus=24,
         mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
         runtime_min=lambda _, attempt: 100 * (attempt),

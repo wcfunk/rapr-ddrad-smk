@@ -9,6 +9,8 @@ rule gstacks:
         "results/stacks_denovo/gstacks/catalog.calls",
 	"results/stacks_denovo/gstacks/gstacks.out",
 	"results/stacks_denovo/gstacks/gstacks.err"
+    params:
+        popmap=config["popmap"],
     conda:
         "envs/stacks.yaml"
     resources:
@@ -18,7 +20,8 @@ rule gstacks:
     log:
         "results/logs/stacks_denovo/gstacks/gstacks.log"
     shell:
-	" (gstacks -P {input.directory} -t 12	"
-	" -M data/popmap_lib2_6frogs.tsv)	"
-	" -O results/stacks_denovo/gstacks/)	"
+	" (gstacks				"
+	" -P results/stacks_denovo/sstacks/	"
+        " -O results/stacks_denovo/gstacks/	"
+	" -M {params.popmap} -t 12)		"
 	" 2> {log}				"

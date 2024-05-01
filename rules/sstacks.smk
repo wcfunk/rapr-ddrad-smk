@@ -10,6 +10,8 @@ rule sstacks:
 	"results/stacks_denovo/sstacks/{sample}.matches.tsv.gz",
 	"results/stacks_denovo/sstacks/sstacks.out",
 	"results/stacks_denovo/sstacks/sstacks.err"
+    params:
+        popmap=config["popmap"],
     conda:
         "envs/stacks.yaml"
     resources:
@@ -19,7 +21,8 @@ rule sstacks:
     log:
         "results/logs/stacks_denovo/sstacks/sstacks.log"
     shell:
-	" (sstacks -P {input.directory} -p 24	"
-	" -M data/popmap_lib2_6frogs.tsv)	"
-	" -o results/stacks_denovo/sstacks/	"
+	" (sstacks				"
+	" -P results/stacks_denovo/cstacks/	"
+        " -o results/stacks_denovo/sstacks/     "
+	" -M {params.popmap} -p 24)		"
 	" 2> {log}				"

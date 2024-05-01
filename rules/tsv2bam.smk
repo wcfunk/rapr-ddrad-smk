@@ -8,6 +8,8 @@ rule tsv2bam:
 	"results/stacks_denovo/sstacks/{sample}.matches.bam",
 	"results/stacks_denovo/sstacks/tsv2bam.out",
 	"results/stacks_denovo/sstacks/tsv2bam.err"
+    params:
+        popmap=config["popmap"],
     conda:
         "envs/stacks.yaml"
     resources:
@@ -17,7 +19,8 @@ rule tsv2bam:
     log:
         "results/logs/stacks_denovo/tsv2bam/tsv2bam.log"
     shell:
-	" (tsv2bam -P {input.directory} -t 12	"
-	" -M data/popmap_lib2_6frogs.tsv	"
-	" -R results/process_radtags/)		"
+	" (tsv2bam				"
+	" -P results/stacks_denovo/sstacks/	"
+        " -R results/process_radtags/   	"
+	" -M {params.popmap} -t 12) 		"
 	" 2> {log}				"

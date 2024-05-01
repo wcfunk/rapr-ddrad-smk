@@ -13,6 +13,8 @@ rule cstacks:
 	"results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz",
 	"results/stacks_denovo/cstacks/cstacks.out",
 	"results/stacks_denovo/cstacks/cstacks.err"
+    params:
+        popmap=config["popmap"],
     conda:
         "envs/stacks.yaml"
     resources:
@@ -22,7 +24,8 @@ rule cstacks:
     log:
         "results/logs/stacks_denovo/cstacks/cstacks.log"
     shell:
-	" (cstacks -P {input.directory} -p 24	"
+	" (cstacks				"
+	" -P results/stacks_denovo/ustacks/	"
 	" -o results/stacks_denovo/cstacks/	"
-	" -M data/popmap_lib2_6frogs.tsv	"
-	" -n 3) 2> {log}			"
+	" -M {params.popmap}			"
+	" -n 3 -p 24) 2> {log}			"

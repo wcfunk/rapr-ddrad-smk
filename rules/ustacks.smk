@@ -18,8 +18,8 @@ rule ustacks:
     log:
         "results/logs/stacks_denovo/ustacks/{sample}.log"
     shell:
-	" (ustacks -f {input.R1} -p 10			"
+	" (ustacks -f {input.R1}			"
 	" -o results/stacks_denovo/ustacks/		"
-	" -m 3 -M 2 -d -t gzfastq			"
+	" -m 3 -M 2 -d -t gzfastq -p 10			"
 	" --model_type bounded --bound_high 0.05)	"
 	"  2> {log}					"

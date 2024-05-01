@@ -1,3 +1,4 @@
+# config.yaml for Ovis
 
 # This first part of the config.yaml is borrowed from Eric Anderson's config file
 executor: cluster-generic

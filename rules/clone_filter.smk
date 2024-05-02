@@ -15,7 +15,7 @@ rule clone_filter:
     log:
         "results/logs/clone_filter/{sample}.log"
     benchmark:
-	"results/benchmarks/clone_filter/{sample}.bmk"
+        "results/benchmarks/clone_filter/{sample}.bmk"
     shell:
         " (clone_filter -i gzfastq                "
         "       -1 {input.fq1} -2 {input.fq2}     "

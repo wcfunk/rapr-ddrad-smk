@@ -14,9 +14,10 @@ rule clone_filter:
         "envs/stacks.yaml",
     log:
         "results/logs/clone_filter/{sample}.log"
+    benchmark:
+	"results/benchmarks/clone_filter/{sample}.bmk"
     shell:
         " (clone_filter -i gzfastq                "
         "       -1 {input.fq1} -2 {input.fq2}     "
         "       --inline-null --oligo-len-1 10    "
         "       -o results/clone_filter/) 2> {log} "
-

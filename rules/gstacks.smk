@@ -19,6 +19,8 @@ rule gstacks:
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
         "results/logs/stacks_denovo/gstacks/gstacks.log"
+    benchmark:
+        "results/benchmarks/stacks_denovo/gstacks.bmk"
     shell:
 	" (gstacks				"
 	" -P results/stacks_denovo/sstacks/	"

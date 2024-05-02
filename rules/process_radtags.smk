@@ -20,6 +20,8 @@ rule process_radtags:
         runtime_min=lambda _, attempt: 420 + ((attempt - 1) * 60),
     log:
         "results/logs/process_radtags/{sample}.log"
+    benchmark:
+        "results/benchmarks/process_radtags/{sample}.bmk"
     shell:
 	" (process_radtags -i gzfastq --threads 10 	"
 	" -1 {input.in1} -2 {input.in2}		   	"

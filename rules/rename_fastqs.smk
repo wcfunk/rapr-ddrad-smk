@@ -7,5 +7,7 @@ rule rename_fastqs:
     output:
         R1="results/process_radtags/{sample}.1.fq.gz",
 	R2="results/process_radtags/{sample}.2.fq.gz"
+    benchmark:
+        "results/benchmarks/rename_fastqs/{sample}.bmk"
     shell:
         "cp {input} {output}"

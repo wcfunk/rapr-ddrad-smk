@@ -20,6 +20,8 @@ rule sstacks:
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
         "results/logs/stacks_denovo/sstacks/sstacks.log"
+    benchmark:
+        "results/benchmarks/stacks_denovo/sstacks/{sample}.bmk"
     shell:
 	" (sstacks				"
 	" -P results/stacks_denovo/cstacks/	"

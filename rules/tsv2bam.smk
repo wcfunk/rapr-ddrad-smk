@@ -18,6 +18,8 @@ rule tsv2bam:
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
         "results/logs/stacks_denovo/tsv2bam/tsv2bam.log"
+    benchmark:
+        "results/benchmarks/stacks_denovo/tsv2bam/{sample}.bmk"
     shell:
 	" (tsv2bam				"
 	" -P results/stacks_denovo/sstacks/	"

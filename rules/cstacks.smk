@@ -23,6 +23,8 @@ rule cstacks:
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
         "results/logs/stacks_denovo/cstacks/cstacks.log"
+    benchmark:
+        "results/benchmarks/stacks_denovo/cstacks/cstacks.bmk"
     shell:
 	" (cstacks				"
 	" -P results/stacks_denovo/ustacks/	"

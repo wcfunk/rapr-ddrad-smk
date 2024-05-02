@@ -17,6 +17,8 @@ rule ustacks:
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
         "results/logs/stacks_denovo/ustacks/{sample}.log"
+    benchmark:
+        "results/benchmarks/stacks_denovo/ustacks/{sample}.bmk"
     shell:
 	" (ustacks -f {input.R1}			"
 	" -o results/stacks_denovo/ustacks/		"

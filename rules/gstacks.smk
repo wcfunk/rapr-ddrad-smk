@@ -23,7 +23,7 @@ rule gstacks:
         "results/benchmarks/stacks_denovo/gstacks/gstacks.bmk"
     shell:
         " (gstacks				"
-        " -P results/stacks_denovo/sstacks/	"
+        " -P results/stacks_denovo/tsv2bam/	"
         " -O results/stacks_denovo/gstacks/	"
         " -M {params.popmap} -t 12)		"
         " 2> {log}				"

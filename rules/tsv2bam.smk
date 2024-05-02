@@ -5,9 +5,9 @@ rule tsv2bam:
     input:
         "results/stacks_denovo/sstacks/{sample}.matches.tsv.gz"
     output:
-        "results/stacks_denovo/sstacks/{sample}.matches.bam",
-        "results/stacks_denovo/sstacks/tsv2bam_{sample}.out",
-        "results/stacks_denovo/sstacks/tsv2bam_{sample}.err"
+        "results/stacks_denovo/tsv2bam/{sample}.matches.bam",
+        "results/stacks_denovo/tsv2bam/{sample}.out",
+        "results/stacks_denovo/tsv2bam/{sample}.err"
     params:
         popmap=config["popmap"],
     conda:
@@ -23,6 +23,7 @@ rule tsv2bam:
     shell:
         " (tsv2bam				"
         " -P results/stacks_denovo/sstacks/	"
+        " -o results/stacks_denovo/tsv2bam/	"    
         " -R results/process_radtags/   	"
         " -M {params.popmap} -t 12) 		"
         " 2> {log}				"

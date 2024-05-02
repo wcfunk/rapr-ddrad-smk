@@ -1,8 +1,6 @@
-name: stacks_2.65-0
 channels:
   - bioconda
   - conda-forge
   - defaults
 dependencies:
   - stacks=2.65=hdcf5f25_0
-prefix: /home/wcfunk/miniconda3/envs/stacks_2.65-0

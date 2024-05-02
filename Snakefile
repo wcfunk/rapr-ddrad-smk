@@ -1,4 +1,4 @@
-configfile: "config/config.yaml"
+configfile: "rapr-ddrad-smk/config/config.yaml"
 
 include: "rules/common.smk"
 

@@ -17,6 +17,7 @@ cluster-generic-cancel-cmd: scancel
 cluster-generic-cancel-nargs: 400
 
 # This second part of the config.yaml is borrowed from Coby McDonald's config file
+# and is specific to Ovis
 default-resources: [cpus=1, mem_mb=4500]
 resources: [cpus=30, mem_mb=300000]
 restart-times: 3

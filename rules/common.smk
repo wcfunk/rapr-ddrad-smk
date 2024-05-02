@@ -8,8 +8,8 @@ sample_table=pd.read_table(config["sample_info"], dtype="str").set_index(
 # create dict to retrieve raw files (from Coby McDonald's common.smk)
 def get_fastqs(wildcards):
   return {
-    "fq2": libs.loc[wildcards.lib, "fq2"],
-    "fq1": libs.loc[wildcards.lib, "fq1"]
+    "fq2": sample_table.loc[wildcards.sample, "fq2"],
+    "fq1": sample_table.loc[wildcards.sample, "fq1"]
   }
 
 ### Specify rule "all" (from Eric Anderson's Snakefile)

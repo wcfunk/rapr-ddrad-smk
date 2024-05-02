@@ -3,7 +3,7 @@
 
 rule gstacks:
     input:
-        "results/stacks_denovo/tsv2bam/{sample}.matches.bam"
+        bam_matches="results/stacks_denovo/tsv2bam/{sample}.matches.bam"
     output:
         "results/stacks_denovo/gstacks/catalog.fa.gz",
         "results/stacks_denovo/gstacks/catalog.calls",

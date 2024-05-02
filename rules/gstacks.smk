@@ -20,7 +20,7 @@ rule gstacks:
     log:
         "results/logs/stacks_denovo/gstacks/gstacks.log"
     benchmark:
-        "results/benchmarks/stacks_denovo/gstacks.bmk"
+        "results/benchmarks/stacks_denovo/gstacks/gstacks.bmk"
     shell:
 	" (gstacks				"
 	" -P results/stacks_denovo/sstacks/	"

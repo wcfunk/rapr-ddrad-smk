@@ -8,8 +8,8 @@ rule sstacks:
         "results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
     output:
         "results/stacks_denovo/sstacks/{sample}.matches.tsv.gz",
-        "results/stacks_denovo/sstacks/sstacks.out",
-        "results/stacks_denovo/sstacks/sstacks.err"
+        "results/stacks_denovo/sstacks/{sample}.out",
+        "results/stacks_denovo/sstacks/{sample}.err"
     params:
         popmap=config["popmap"],
     conda:
@@ -19,7 +19,7 @@ rule sstacks:
         mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
         runtime_min=lambda _, attempt: 100 * (attempt),
     log:
-        "results/logs/stacks_denovo/sstacks/sstacks.log"
+        "results/logs/stacks_denovo/sstacks/{sample}.log"
     benchmark:
         "results/benchmarks/stacks_denovo/sstacks/{sample}.bmk"
     shell:

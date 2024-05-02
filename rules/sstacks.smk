@@ -8,7 +8,7 @@ rule sstacks:
 	"results/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
     output:
 	"results/stacks_denovo/sstacks/{sample}.matches.tsv.gz",
-	"results/stacks_denovo/sstacks/sstacks.out",
+        "results/stacks_denovo/sstacks/sstacks.out",
 	"results/stacks_denovo/sstacks/sstacks.err"
     params:
         popmap=config["popmap"],

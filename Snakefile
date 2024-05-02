@@ -1,17 +1,17 @@
-configfile: "rapr-ddrad-smk/config/config.yaml"
+configfile: "config/config.yaml"
 
-include: "rapr-ddrad-smk/rules/common.smk"
+include: "rules/common.smk"
 
-include: "rapr-ddrad-smk/rules/clone_filter.smk"
+include: "rules/clone_filter.smk"
 
-include: "rapr-ddrad-smk/rules/process_radtags.smk"
-include: "rapr-ddrad-smk/rules/rename_fastqs.smk"
+include: "rules/process_radtags.smk"
+include: "rules/rename_fastqs.smk"
 
 # Stacks de novo pipeline
-include: "rapr-ddrad-smk/rules/ustacks.smk"
-include: "rapr-ddrad-smk/rules/cstacks.smk"
-include: "rapr-ddrad-smk/rules/sstacks.smk"
-include: "rapr-ddrad-smk/rules/tsv2bam.smk"
-include: "rapr-ddrad-smk/rules/gstacks.smk"
+include: "rules/ustacks.smk"
+include: "rules/cstacks.smk"
+include: "rules/sstacks.smk"
+include: "rules/tsv2bam.smk"
+include: "rules/gstacks.smk"
 
-include: "rapr-ddrad-smk/rules/populations.smk"
+include: "rules/populations.smk"

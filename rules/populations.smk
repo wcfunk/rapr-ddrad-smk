@@ -8,7 +8,7 @@ rule populations:
     output:
         "results/populations/populations.snps.vcf",
         "results/populations/populations.out",
-      	"results/populations/populations.err"
+        "results/populations/populations.err"
     params:
         popmap=config["popmap"],
     resources:

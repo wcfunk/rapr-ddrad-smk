@@ -1,16 +1,25 @@
-# add resource config here
-cluster:
+# config.yaml for Ovis
+
+# This first part of the config.yaml is borrowed from Eric Anderson's config file
+executor: cluster-generic
+cluster-generic-submit-cmd:
   mkdir -p results/slurm_logs/{rule} &&
   sbatch
     --cpus-per-task={threads}
     --mem={resources.mem_mb}
-    --time={resources.runtime_min}
+    --time={resources.time}
     --job-name=smk-{rule}-{wildcards}
     --output=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.out
     --error=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.err
+    --parsable
     --mail-type=FAIL
     --mail-user=Chris.Funk@colostate.edu
+cluster-generic-status-cmd: status-sacct-robust.sh
+cluster-generic-cancel-cmd: scancel
+cluster-generic-cancel-nargs: 400
 
+# This second part of the config.yaml is borrowed from Coby McDonald's config file
+# and is specific to Ovis
 default-resources: [cpus=1, mem_mb=4500]
 resources: [cpus=30, mem_mb=300000]
 restart-times: 3
@@ -23,4 +32,4 @@ keep-going: True
 rerun-incomplete: True
 printshellcmds: True
 scheduler: greedy
-use-conda: True
+software-deployment-method: conda

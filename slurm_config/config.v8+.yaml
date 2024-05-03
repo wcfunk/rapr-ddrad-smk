@@ -14,7 +14,6 @@ cluster-generic-submit-cmd:
     --parsable
     --mail-type=FAIL
     --mail-user=Chris.Funk@colostate.edu
-cluster-generic-status-cmd: status-sacct-robust.sh
 cluster-generic-cancel-cmd: scancel
 cluster-generic-cancel-nargs: 400
 

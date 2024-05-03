@@ -10,7 +10,7 @@ rule ustacks:
         out="results/stacks_denovo/ustacks/ustacks_{sample}.out",
         err="results/stacks_denovo/ustacks/ustacks_{sample}.err"
     conda:
-        "envs/stacks.yaml"
+        "../envs/stacks.yaml"
     resources:
         cpus=10,
         mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),

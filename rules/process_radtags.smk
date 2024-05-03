@@ -10,7 +10,7 @@ rule process_radtags:
         R2extratwos="results/process_radtags/{sample}_2.2.2.fq.gz",
         R2rem="results/process_radtags/{sample}_2.2.rem.2.fq.gz"
     conda:
-        "envs/stacks.yaml"
+        "../envs/stacks.yaml"
     params:
         enz1= config["process_radtags"]["enzyme1"],
         enz2= config["process_radtags"]["enzyme2"],

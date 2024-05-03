@@ -12,7 +12,7 @@ rule gstacks:
     params:
         popmap=config["popmap"],
     conda:
-        "envs/stacks.yaml"
+        "../envs/stacks.yaml"
     resources:
         cpus=12,
         mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),

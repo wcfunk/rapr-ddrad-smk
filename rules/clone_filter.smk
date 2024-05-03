@@ -11,7 +11,7 @@ rule clone_filter:
         mem_mb=15000,
         runtime_min=lambda _, attempt: 840 * (attempt),
     conda:
-        "envs/stacks.yaml",
+        "../envs/stacks.yaml",
     log:
         "results/logs/clone_filter/{sample}.log"
     benchmark:

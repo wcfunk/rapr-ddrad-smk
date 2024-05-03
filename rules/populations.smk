@@ -16,7 +16,7 @@ rule populations:
         runtime_min=420,
         cpus=20
     conda:
-        "envs/stacks.yaml"
+        "../envs/stacks.yaml"
     log:
         "results/logs/populations/populations.log"
     shell:

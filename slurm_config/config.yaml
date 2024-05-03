@@ -1,8 +1,7 @@
 # add resource config here
 
-# This is a hybrid of Eric Anderson's and Coby McDonald's slurm config.yaml
-executor: cluster-generic
-cluster-generic-submit-cmd:
+# This is a hybrid of Eric Anderson's, Coby McDonald's, and Christine Bossu's slurm config.yaml
+cluster:
   mkdir -p results/slurm_logs/{rule} &&
   sbatch
     --cpus-per-task={threads}
@@ -14,9 +13,9 @@ cluster-generic-submit-cmd:
     --parsable
     --mail-type=FAIL
     --mail-user=Chris.Funk@colostate.edu
-cluster-generic-status-cmd: status-sacct-robust.sh
-cluster-generic-cancel-cmd: scancel
-cluster-generic-cancel-nargs: 400
+cluster-status: status-sacct-robust.sh
+cluster-cancel: scancel
+cluster-cancel-nargs: 400
 
 # This is all from Coby's slurm config.yaml
 default-resources: [cpus=1, mem_mb=4500]

@@ -3,7 +3,7 @@
 
 rule gstacks:
     input:
-        bam_matches="results/stacks_denovo/tsv2bam/{sample}.matches.bam"
+        expand("results/stacks_denovo/tsv2bam/{s}.matches.bam", s=SAMPLES)
     output:
         "results/stacks_denovo/gstacks/catalog.fa.gz",
         "results/stacks_denovo/gstacks/catalog.calls",
@@ -23,7 +23,7 @@ rule gstacks:
         "results/benchmarks/stacks_denovo/gstacks/gstacks.bmk"
     shell:
         " (gstacks				"
-        " -I results/stacks_denovo/tsv2bam/	"
+        " -P results/stacks_denovo/tsv2bam/	"
         " -O results/stacks_denovo/gstacks/	"
         " -M {params.popmap} -t 12)		"
         " 2> {log}				"

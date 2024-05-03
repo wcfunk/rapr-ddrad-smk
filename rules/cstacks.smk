@@ -3,9 +3,9 @@
 
 rule cstacks:
     input:
-        tags="results/stacks_denovo/ustacks/{sample}.tags.tsv.gz",	
-        snps="results/stacks_denovo/ustacks/{sample}.snps.tsv.gz",
-        alleles="results/stacks_denovo/ustacks/{sample}.alleles.tsv.gz"
+        expand("results/stacks_denovo/ustacks/{s}.tags.tsv.gz", s=SAMPLES),	
+        expand("results/stacks_denovo/ustacks/{s}.snps.tsv.gz", s=SAMPLES),
+        expand("results/stacks_denovo/ustacks/{s}.alleles.tsv.gz", s=SAMPLES)
     output:
         "results/stacks_denovo/cstacks/catalog.tags.tsv.gz",
         "results/stacks_denovo/cstacks/catalog.snps.tsv.gz",

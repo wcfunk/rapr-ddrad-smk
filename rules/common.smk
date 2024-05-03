@@ -5,6 +5,12 @@ sample_table=pd.read_table(config["sample_info"], dtype="str").set_index(
     "sample", drop=False
 )
 
+### Transfer values from the yaml and tabular config to
+### our familiar lists, SAMPLES and CHROMOS
+# Populate our SAMPLES list from the sample_table using a little
+# pandas syntax
+SAMPLES=sample_table["sample"].unique().tolist()
+
 # create dict to retrieve raw files (from Coby McDonald's common.smk)
 def get_fastqs(wildcards):
   return {

@@ -32,4 +32,4 @@ keep-going: True
 rerun-incomplete: True
 printshellcmds: True
 scheduler: greedy
-use-conda: True
+software-deployment-method: conda

@@ -1,5 +1,8 @@
 # add resource config here
-cluster:
+
+# This is a hybrid of Eric Anderson's and Coby McDonald's slurm config.yaml
+executor: cluster-generic
+cluster-generic-submit-cmd:
   mkdir -p results/slurm_logs/{rule} &&
   sbatch
     --cpus-per-task={threads}
@@ -8,9 +11,14 @@ cluster:
     --job-name=smk-{rule}-{wildcards}
     --output=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.out
     --error=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.err
+    --parsable
     --mail-type=FAIL
     --mail-user=Chris.Funk@colostate.edu
+cluster-generic-status-cmd: status-sacct-robust.sh
+cluster-generic-cancel-cmd: scancel
+cluster-generic-cancel-nargs: 400
 
+# This is all from Coby's slurm config.yaml
 default-resources: [cpus=1, mem_mb=4500]
 resources: [cpus=30, mem_mb=300000]
 restart-times: 3

@@ -26,5 +26,5 @@ rule process_radtags:
         " (process_radtags -i gzfastq --threads 10  "
         " -1 {input.in1} -2 {input.in2}  "
         " -o results/process_radtags/  "
-        " renz-1 {params.enz1} renz-2 {params.enz2}  "
+        " --renz-1 {params.enz1} --renz-2 {params.enz2}  "
         " -c -q -r) 2> {log}  "

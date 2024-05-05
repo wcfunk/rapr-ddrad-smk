@@ -16,4 +16,4 @@ rule rename_fastqs:
     benchmark:
         "results/benchmarks/rename_fastqs/{sample}.bmk"
     shell:
-        "cp {input} {output}"
+        "mv {input} {output}"

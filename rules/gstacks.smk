@@ -15,7 +15,7 @@ rule gstacks:
         "../envs/stacks.yaml"
     resources:
         cpus=24,
-        mem_187200,
+        mem=187200,
         time="24:00:00"
     log:
         "results/logs/stacks_denovo/gstacks/gstacks.log"

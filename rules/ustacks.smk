@@ -12,9 +12,9 @@ rule ustacks:
     conda:
         "../envs/stacks.yaml"
     resources:
-        cpus=10,
-        mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
-        runtime_min=lambda _, attempt: 100 * (attempt),
+        cpus=30,
+        mem_mb=300000,
+        runtime_min=24:00:00
     log:
         "results/logs/stacks_denovo/ustacks/{sample}.log"
     benchmark:

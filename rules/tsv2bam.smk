@@ -15,7 +15,7 @@ rule tsv2bam:
     resources:
         cpus=10,
         mem_mb=78000,
-        time="24:00:00:
+        time="24:00:00"
     log:
         "results/logs/stacks_denovo/tsv2bam/{sample}.log"
     benchmark:

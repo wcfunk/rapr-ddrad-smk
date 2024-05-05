@@ -13,7 +13,7 @@ rule ustacks:
         "../envs/stacks.yaml"
     resources:
         cpus=30,
-        mem_mb=300000,
+        mem_mb=50000,
         runtime_min="24:00:00"
     log:
         "results/logs/stacks_denovo/ustacks/{sample}.log"

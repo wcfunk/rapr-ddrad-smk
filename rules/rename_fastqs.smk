@@ -16,4 +16,7 @@ rule rename_fastqs:
     benchmark:
         "results/benchmarks/rename_fastqs/{sample}.bmk"
     shell:
-        "mv {input} {output}"
+        """
+        mv {input.R1extraones} {output.R1} &&
+        mv {input.R2extratwos} {output.R2}
+        """

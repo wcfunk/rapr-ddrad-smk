@@ -19,8 +19,8 @@ rule cstacks:
         "../envs/stacks.yaml"
     resources:
         cpus=24,
-        mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
-        runtime_min=lambda _, attempt: 100 * (attempt),
+        mem_mb=187200,
+        time="24:00:00"
     log:
         "results/logs/stacks_denovo/cstacks/cstacks.log"
     benchmark:

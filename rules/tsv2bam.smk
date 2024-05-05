@@ -13,9 +13,9 @@ rule tsv2bam:
     conda:
         "../envs/stacks.yaml"
     resources:
-        cpus=12,
-        mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
-        runtime_min=lambda _, attempt: 100 * (attempt),
+        cpus=10,
+        mem_mb=78000,
+        time="24:00:00:
     log:
         "results/logs/stacks_denovo/tsv2bam/{sample}.log"
     benchmark:
@@ -25,5 +25,5 @@ rule tsv2bam:
         " -P results/stacks_denovo/sstacks/	"
         " -o results/stacks_denovo/tsv2bam/	"    
         " -R results/process_radtags/   	"
-        " -M {params.popmap} -t 12) 		"
+        " -M {params.popmap} -t 10) 		"
         " 2> {log}				"

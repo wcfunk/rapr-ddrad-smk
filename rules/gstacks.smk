@@ -14,9 +14,9 @@ rule gstacks:
     conda:
         "../envs/stacks.yaml"
     resources:
-        cpus=12,
-        mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
-        runtime_min=lambda _, attempt: 100 * (attempt),
+        cpus=24,
+        mem_187200,
+        time="24:00:00"
     log:
         "results/logs/stacks_denovo/gstacks/gstacks.log"
     benchmark:
@@ -25,5 +25,5 @@ rule gstacks:
         " (gstacks				"
         " -P results/stacks_denovo/tsv2bam/	"
         " -O results/stacks_denovo/gstacks/	"
-        " -M {params.popmap} -t 12)		"
+        " -M {params.popmap} -t 24)		"
         " 2> {log}				"

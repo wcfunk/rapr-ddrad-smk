@@ -9,7 +9,7 @@ rule clone_filter:
     resources:
         cpus=1,
         mem_mb=15000,
-        runtime_min=lambda _, attempt: 840 * (attempt),
+        time="12:00:00"
     conda:
         "../envs/stacks.yaml",
     log:

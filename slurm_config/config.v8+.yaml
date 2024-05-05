@@ -1,13 +1,12 @@
-# add resource config here
+# Ovis slurm config file
 
-# This is a hybrid of Eric Anderson's and Coby McDonald's slurm config.yaml
 executor: cluster-generic
 cluster-generic-submit-cmd:
   mkdir -p results/slurm_logs/{rule} &&
   sbatch
     --cpus-per-task={threads}
     --mem={resources.mem_mb}
-    --time={resources.runtime_min}
+    --time={resources.time}
     --job-name=smk-{rule}-{wildcards}
     --output=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.out
     --error=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.err
@@ -17,18 +16,19 @@ cluster-generic-submit-cmd:
 cluster-generic-status-cmd: status-scontrol.sh
 cluster-generic-cancel-cmd: scancel
 cluster-generic-cancel-nargs: 400
-
-# This is all from Coby's slurm config.yaml
-default-resources: [cpus=1, mem_mb=4500]
-resources: [cpus=30, mem_mb=300000]
-restart-times: 3
+default-resources:
+  - time="08:00:00"
+  - mem_mb=7800
+  - tmpdir="results/snake-tmp"
+restart-times: 0
 max-jobs-per-second: 10
-max-status-checks-per-second: 1
+max-status-checks-per-second: 25
 local-cores: 1
 latency-wait: 60
-jobs: 100
+cores: 32
+jobs: 32
 keep-going: True
 rerun-incomplete: True
 printshellcmds: True
-scheduler: greedy
-use-conda: True
+software-deployment-method: conda
+rerun-trigger: mtime

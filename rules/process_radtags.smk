@@ -16,8 +16,8 @@ rule process_radtags:
         enz2= config["process_radtags"]["enzyme2"],
     resources:
         cpus=10,
-        mem_mb=90000,
-        runtime_min=lambda _, attempt: 420 + ((attempt - 1) * 60),
+        mem_mb=78000,
+        time="12:00:00"
     log:
         "results/logs/process_radtags/{sample}.log"
     benchmark:

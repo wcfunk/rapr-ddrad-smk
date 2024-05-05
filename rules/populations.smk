@@ -12,9 +12,9 @@ rule populations:
     params:
         popmap=config["popmap"],
     resources:
-        mem_mb=90000,
-        runtime_min=420,
-        cpus=20
+        cpus=24,         
+        mem_mb=187200,
+        time="24:00:00"
     conda:
         "../envs/stacks.yaml"
     log:
@@ -27,5 +27,5 @@ rule populations:
         " -p 2 -r 0.5 --min-maf 0.1		"
         " --write-random-snp 			"
         " --fstats --hwe --genepop --vcf	"
-        " -t 20)				"
+        " -t 24)				"
         " 2> {log}				"

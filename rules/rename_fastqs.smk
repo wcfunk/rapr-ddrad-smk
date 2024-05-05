@@ -8,9 +8,9 @@ rule rename_fastqs:
         R1="results/process_radtags/{sample}.1.fq.gz",
         R2="results/process_radtags/{sample}.2.fq.gz"
     resources:
-        cpus=10,
-        mem_mb=90000,
-        runtime_min=lambda _, attempt: 420 + ((attempt - 1) * 60),
+        cpus=1,
+        mem_mb=7800,
+        time="00:30:00"
     log:
         "results/logs/rename_fastqs/{sample}.log"
     benchmark:

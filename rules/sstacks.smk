@@ -15,9 +15,9 @@ rule sstacks:
     conda:
         "../envs/stacks.yaml"
     resources:
-        cpus=24,
-        mem_mb=lambda _, attempt: 54000 + ((attempt - 1) * 2000),
-        runtime_min=lambda _, attempt: 100 * (attempt),
+        cpus=10,
+        mem_mb=78000,
+        time="24:00:00"
     log:
         "results/logs/stacks_denovo/sstacks/{sample}.log"
     benchmark:
@@ -26,5 +26,5 @@ rule sstacks:
         " (sstacks				"
         " -P results/stacks_denovo/cstacks/	"
         " -o results/stacks_denovo/sstacks/     "
-        " -M {params.popmap} -p 24)		"
+        " -M {params.popmap} -p 10)		"
         " 2> {log}				"

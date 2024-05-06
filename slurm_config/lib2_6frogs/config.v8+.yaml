@@ -1,4 +1,4 @@
-# Ovis slurm config file
+# Alpine slurm config file for lib2_6frogs
 
 executor: cluster-generic
 cluster-generic-submit-cmd:
@@ -8,25 +8,25 @@ cluster-generic-submit-cmd:
     --mem={resources.mem_mb}
     --time={resources.time}
     --job-name=smk-{rule}-{wildcards}
-    --output=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.out
-    --error=results/slurm_logs/{rule}/{rule}-%j-{wildcards}.err
+    --output=results/lib2_6frogs/slurm_logs/{rule}/{rule}-%j-{wildcards}.out
+    --error=results/lib2_6frogs/slurm_logs/{rule}/{rule}-%j-{wildcards}.err
     --parsable
     --mail-type=FAIL
     --mail-user=Chris.Funk@colostate.edu
-cluster-generic-status-cmd: status-scontrol.sh
+cluster-generic-status-cmd: status-sacct-robust.sh
 cluster-generic-cancel-cmd: scancel
-cluster-generic-cancel-nargs: 400
+cluster-generic-cancel-nargs: 4000
 default-resources:
   - time="08:00:00"
-  - mem_mb=7800
+  - mem_mb=3740
   - tmpdir="results/snake-tmp"
 restart-times: 0
 max-jobs-per-second: 10
-max-status-checks-per-second: 25
+max-status-checks-per-second: 50
 local-cores: 1
 latency-wait: 60
-cores: 32
-jobs: 32
+cores: 2400
+jobs: 450
 keep-going: True
 rerun-incomplete: True
 printshellcmds: True

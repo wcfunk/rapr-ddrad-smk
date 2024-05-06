@@ -20,6 +20,7 @@ default-resources:
   - time="08:00:00"
   - mem_mb=7800
   - tmpdir="results/snake-tmp"
+NodeName=DEFAULT CPUs=30 RealMemory=300000
 restart-times: 0
 max-jobs-per-second: 10
 max-status-checks-per-second: 25

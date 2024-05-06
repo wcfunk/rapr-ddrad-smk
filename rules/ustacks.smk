@@ -14,7 +14,7 @@ rule ustacks:
     resources:
         cpus=10,
         mem_mb=78000,
-        runtime_min="24:00:00"
+        time="24:00:00"
     log:
         "results/logs/stacks_denovo/ustacks/{sample}.log"
     benchmark:

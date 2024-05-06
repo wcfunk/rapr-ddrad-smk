@@ -17,10 +17,3 @@ def get_fastqs(wildcards):
     "fq2": sample_table.loc[wildcards.sample, "fq2"],
     "fq1": sample_table.loc[wildcards.sample, "fq1"]
   }
-
-### Specify rule "all" (from Eric Anderson's Snakefile)
-# By default, Snakemake tries to create the input files needed
-# for the first rule in the Snakefile, so we define the first
-# rule to ask for results/populations/populations.snps.vcf
-rule all:
-  input: "results/populations/populations.snps.vcf"

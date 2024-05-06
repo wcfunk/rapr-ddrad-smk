@@ -11,7 +11,7 @@ rule clone_filter:
         mem_mb=3740,
         time="12:00:00"
     conda:
-        "../../envs/stacks.yaml",
+        "../envs/stacks.yaml",
     log:
         "results/lib2_6frogs/logs/clone_filter/{sample}.log"
     benchmark:

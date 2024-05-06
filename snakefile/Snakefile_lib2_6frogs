@@ -1,4 +1,4 @@
-configfile: "rapr-ddrad-smk/config/config.yaml"
+configfile: "rapr-ddrad-smk/config/config_lib2_6frogs.yaml"
 
 include: "rules/common.smk"
 

@@ -3,4 +3,4 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - stacks ==2.65-0
+  - stacks=2.65=hdcf5f25_0

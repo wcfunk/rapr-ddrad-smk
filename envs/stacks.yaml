@@ -2,7 +2,5 @@ name: stacks2.65
 channels:
   - bioconda
   - conda-forge
-  - defaults
 dependencies:
-  - stacks=2.65=hdcf5f25_0
-prefix: /projects/wcfunk@colostate.edu/mambaforge/envs/stacks2.65
+  - stacks=2.65-0

@@ -3,27 +3,27 @@
 
 rule gstacks:
     input:
-        expand("results/stacks_denovo/tsv2bam/{s}.matches.bam", s=SAMPLES)
+        expand("results/lib2_6frogs/stacks_denovo/tsv2bam/{s}.matches.bam", s=SAMPLES)
     output:
-        "results/stacks_denovo/gstacks/catalog.fa.gz",
-        "results/stacks_denovo/gstacks/catalog.calls",
-        "results/stacks_denovo/gstacks/gstacks.out",
-        "results/stacks_denovo/gstacks/gstacks.err"
+        "results/lib2_6frogs/stacks_denovo/gstacks/catalog.fa.gz",
+        "results/lib2_6frogs/stacks_denovo/gstacks/catalog.calls",
+        "results/lib2_6frogs/stacks_denovo/gstacks/gstacks.out",
+        "results/lib2_6frogs/stacks_denovo/gstacks/gstacks.err"
     params:
         popmap=config["popmap"],
     conda:
-        "../envs/stacks.yaml"
+        "../../envs/stacks.yaml"
     resources:
         cpus=24,
-        mem=187200,
+        mem=89760,
         time="24:00:00"
     log:
-        "results/logs/stacks_denovo/gstacks/gstacks.log"
+        "results/lib2_6frogs/logs/stacks_denovo/gstacks/gstacks.log"
     benchmark:
-        "results/benchmarks/stacks_denovo/gstacks/gstacks.bmk"
+        "results/lib2_6frogs/benchmarks/stacks_denovo/gstacks/gstacks.bmk"
     shell:
         " (gstacks				"
-        " -P results/stacks_denovo/tsv2bam/	"
-        " -O results/stacks_denovo/gstacks/	"
+        " -P results/lib2_6frogs/stacks_denovo/tsv2bam/	"
+        " -O results/lib2_6frogs/stacks_denovo/gstacks/	"
         " -M {params.popmap} -t 24)		"
         " 2> {log}				"

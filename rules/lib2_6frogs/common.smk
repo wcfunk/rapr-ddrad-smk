@@ -1,7 +1,7 @@
 import pandas as pd
 
 ### Get the sample info table read into a pandas data frame (from Eric Anderon's Snakefile)
-sample_table=pd.read_table(config_lib2_6frogs["sample_info"], dtype="str").set_index(
+sample_table=pd.read_table(config["sample_info"], dtype="str").set_index(
     "sample", drop=False
 )
 

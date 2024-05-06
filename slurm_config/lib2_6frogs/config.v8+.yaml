@@ -12,8 +12,6 @@ cluster-generic-submit-cmd:
     --output=results/lib2_6frogs/slurm_logs/{rule}/{rule}-%j-{wildcards}.out
     --error=results/lib2_6frogs/slurm_logs/{rule}/{rule}-%j-{wildcards}.err
     --parsable
-    --mail-type=FAIL
-    --mail-user=Chris.Funk@colostate.edu
 cluster-generic-status-cmd: status-sacct-robust.sh
 cluster-generic-cancel-cmd: scancel
 cluster-generic-cancel-nargs: 4000

@@ -10,7 +10,7 @@ rule ustacks:
         out="results/lib2_6frogs/stacks_denovo/ustacks/ustacks_{sample}.out",
         err="results/lib2_6frogs/stacks_denovo/ustacks/ustacks_{sample}.err"
     conda:
-        "../../envs/stacks.yaml"
+        "/projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
     resources:
         cpus=10,
         mem_mb=37400,

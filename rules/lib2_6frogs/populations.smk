@@ -16,7 +16,7 @@ rule populations:
         mem_mb=89760,
         time="24:00:00"
     conda:
-       "../../envs/stacks.yaml"
+        "/projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
     log:
         "results/lib2_6frogs/logs/populations/populations.log"
     shell:

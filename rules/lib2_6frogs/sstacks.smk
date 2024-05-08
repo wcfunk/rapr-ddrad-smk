@@ -13,7 +13,7 @@ rule sstacks:
     params:
         popmap=config["popmap"],
     conda:
-       "../../envs/stacks.yaml"
+        "/projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
     resources:
         cpus=10,
         mem_mb=37400,

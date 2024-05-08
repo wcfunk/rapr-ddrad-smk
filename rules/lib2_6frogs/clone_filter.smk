@@ -8,10 +8,10 @@ rule clone_filter:
         "results/lib2_6frogs/clone_filter/{sample}_2.2.fq.gz"
     resources:
         cpus=1,
-        mem_mb=15000,
+        mem_mb=30000,
         time="12:00:00"
     conda:
-        "/projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
+       "../../envs/stacks.yaml",
     log:
         "results/lib2_6frogs/logs/clone_filter/{sample}.log"
     benchmark:

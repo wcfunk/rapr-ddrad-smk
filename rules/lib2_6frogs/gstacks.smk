@@ -6,9 +6,7 @@ rule gstacks:
         expand("results/lib2_6frogs/stacks_denovo/tsv2bam/{s}.matches.bam", s=SAMPLES)
     output:
         "results/lib2_6frogs/stacks_denovo/gstacks/catalog.fa.gz",
-        "results/lib2_6frogs/stacks_denovo/gstacks/catalog.calls",
-        "results/lib2_6frogs/stacks_denovo/gstacks/gstacks.out",
-        "results/lib2_6frogs/stacks_denovo/gstacks/gstacks.err"
+        "results/lib2_6frogs/stacks_denovo/gstacks/catalog.calls"
     params:
         popmap=config["popmap"],
     conda:

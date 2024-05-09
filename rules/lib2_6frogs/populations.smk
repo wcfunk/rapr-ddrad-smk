@@ -6,9 +6,7 @@ rule populations:
         "results/lib2_6frogs/stacks_denovo/gstacks/catalog.fa.gz",
         "results/lib2_6frogs/stacks_denovo/gstacks/catalog.calls"
     output:
-        "results/lib2_6frogs/populations/populations.snps.vcf",
-        "results/lib2_6frogs/populations/populations.out",
-        "results/lib2_6frogs/populations/populations.err"
+        "results/lib2_6frogs/populations/populations.snps.vcf"
     params:
         popmap=config["popmap"],
     resources:

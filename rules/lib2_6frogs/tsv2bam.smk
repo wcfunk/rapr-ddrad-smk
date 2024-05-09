@@ -5,9 +5,7 @@ rule tsv2bam:
     input:
         "results/lib2_6frogs/stacks_denovo/sstacks/{sample}.matches.tsv.gz"
     output:
-        "results/lib2_6frogs/stacks_denovo/tsv2bam/{sample}.matches.bam",
-        "results/lib2_6frogs/stacks_denovo/tsv2bam/{sample}.out",
-        "results/lib2_6frogs/stacks_denovo/tsv2bam/{sample}.err"
+        "results/lib2_6frogs/stacks_denovo/tsv2bam/{sample}.matches.bam"
     params:
         popmap=config["popmap"],
     conda:

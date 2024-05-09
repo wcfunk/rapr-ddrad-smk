@@ -10,9 +10,7 @@ rule cstacks:
         "results/lib2_6frogs/stacks_denovo/cstacks/catalog.tags.tsv.gz",
         "results/lib2_6frogs/stacks_denovo/cstacks/catalog.snps.tsv.gz",
         "results/lib2_6frogs/stacks_denovo/cstacks/catalog.alleles.tsv.gz",
-        "results/lib2_6frogs/stacks_denovo/cstacks/catalog.sample_list.tsv.gz",
-        "results/lib2_6frogs/stacks_denovo/cstacks/cstacks.out",
-        "results/lib2_6frogs/stacks_denovo/cstacks/cstacks.err"
+        "results/lib2_6frogs/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
     params:
         popmap=config["popmap"],
     conda:

@@ -6,9 +6,7 @@ rule ustacks:
     output:
         tags="results/lib2_6frogs/stacks_denovo/ustacks/{sample}.tags.tsv.gz",	
         snps="results/lib2_6frogs/stacks_denovo/ustacks/{sample}.snps.tsv.gz",
-        alleles="results/lib2_6frogs/stacks_denovo/ustacks/{sample}.alleles.tsv.gz",
-        out="results/lib2_6frogs/stacks_denovo/ustacks/ustacks_{sample}.out",
-        err="results/lib2_6frogs/stacks_denovo/ustacks/ustacks_{sample}.err"
+        alleles="results/lib2_6frogs/stacks_denovo/ustacks/{sample}.alleles.tsv.gz"
     conda:
         "stacks-2.65"
     resources:

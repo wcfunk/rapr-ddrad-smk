@@ -7,9 +7,7 @@ rule sstacks:
         "results/lib2_6frogs/stacks_denovo/cstacks/catalog.alleles.tsv.gz",
         "results/lib2_6frogs/stacks_denovo/cstacks/catalog.sample_list.tsv.gz"
     output:
-        "results/lib2_6frogs/stacks_denovo/sstacks/{sample}.matches.tsv.gz",
-        "results/lib2_6frogs/stacks_denovo/sstacks/{sample}.out",
-        "results/lib2_6frogs/stacks_denovo/sstacks/{sample}.err"
+        "results/lib2_6frogs/stacks_denovo/sstacks/{sample}.matches.tsv.gz"
     params:
         popmap=config["popmap"],
     conda:

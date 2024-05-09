@@ -12,7 +12,7 @@ rule gstacks:
     params:
         popmap=config["popmap"],
     conda:
-        "-p /projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
+        "stacks-2.65"
     resources:
         cpus=24,
         mem=89760,

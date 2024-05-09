@@ -10,7 +10,7 @@ rule process_radtags:
         R2extratwos="results/lib2_6frogs/process_radtags/{sample}_2.2.2.fq.gz",
         R2rem="results/lib2_6frogs/process_radtags/{sample}_2.2.rem.2.fq.gz"
     conda:
-        "/projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
+        "-p /projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
     params:
         enz1= config["process_radtags"]["enzyme1"],
         enz2= config["process_radtags"]["enzyme2"],

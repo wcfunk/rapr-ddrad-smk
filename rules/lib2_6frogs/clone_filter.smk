@@ -11,7 +11,7 @@ rule clone_filter:
         mem_mb=30000,
         time="12:00:00"
     conda:
-        "/projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
+        "-p /projects/wcfunk@colostate.edu/mambaforge/envs/stacks-2.65"
     log:
         "results/lib2_6frogs/logs/clone_filter/{sample}.log"
     benchmark:

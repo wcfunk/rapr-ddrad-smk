@@ -12,7 +12,7 @@ rule ustacks:
     resources:
         cpus=24,
         mem_mb=89760,
-        time="24:00:00"
+        time="6-23:59:59"
     log:
         "results/lib2_6frogs/logs/stacks_denovo/ustacks/{sample}.log"
     benchmark:

@@ -12,13 +12,13 @@ rule ustacks:
     resources:
         cpus=24,
         mem_mb=89760,
-        qos="long",
         time="6-23:59:59"
     log:
         "results/lib2_6frogs/logs/stacks_denovo/ustacks/{sample}.log"
     benchmark:
         "results/lib2_6frogs/benchmarks/stacks_denovo/ustacks/{sample}.bmk"
     shell:
+        " #SBATCH --qos=long                            "
         " (ustacks -f {input.R1}			"
         " -o results/lib2_6frogs/stacks_denovo/ustacks/		"
         " -m 3 -M 2 -d -t gzfastq -p 10			"

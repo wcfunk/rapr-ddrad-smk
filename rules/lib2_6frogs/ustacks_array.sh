@@ -16,11 +16,10 @@
 eval "$(conda shell.bash hook)"
 conda activate stacks-2.65
 
-reads_dir=/scratch/alpine/wcfunk@colostate.edu/Rana_pretiosa/ddrad/results/lib2_6frogs/process_radtags/
+reads_dir=/scratch/alpine/wcfunk@colostate.edu/Rana_pretiosa/ddrad/results/lib2_6frogs/process_radtags/for_slurm_array/
 out=/scratch/alpine/wcfunk@colostate.edu/Rana_pretiosa/ddrad/results/lib2_6frogs/stacks_denovo/ustacks/
 
-samples=$(KM_NWR_DEVINE_EM01_A2.1.fq.gz KM_NWR_DEVINE_EM02_A1.1.fq.gz CHOL_EM7_A1.1.fq.gz)
-file=`ls $samples | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
+file=`ls $reads_dir/*.1.fq.gz | head -n $SLURM_ARRAY_TASK_ID | tail -n 1`
 
 i=$SLURM_ARRAY_TASK_ID
 

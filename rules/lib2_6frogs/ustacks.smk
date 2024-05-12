@@ -18,8 +18,6 @@ rule ustacks:
     benchmark:
         "results/lib2_6frogs/benchmarks/stacks_denovo/ustacks/{sample}.bmk"
     shell:
-        " #!/bin/bash     "
-        " #SBATCH --qos=long      "
         " (ustacks -f {input.R1}			"
         " -o results/lib2_6frogs/stacks_denovo/ustacks/		"
         " -m 3 -M 2 -d -t gzfastq -p 10			"

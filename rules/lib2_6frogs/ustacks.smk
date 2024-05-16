@@ -12,7 +12,6 @@ rule ustacks:
     resources:
         cpus=24,
         mem_mb=89760,
-        time="6-00:00:00",
         qos="long"
     log:
         "results/lib2_6frogs/logs/stacks_denovo/ustacks/{sample}.log"

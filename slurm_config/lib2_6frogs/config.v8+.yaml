@@ -19,7 +19,7 @@ cluster-generic-cancel-nargs: 4000
 default-resources:
   - time="08:00:00"
   - mem_mb=3740
-  - qos="normal"
+  - qos=normal
   - tmpdir="results/lib2_6frogs/snake-tmp"
 restart-times: 0
 max-jobs-per-second: 10

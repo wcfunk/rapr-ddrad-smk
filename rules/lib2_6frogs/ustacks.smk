@@ -10,10 +10,9 @@ rule ustacks:
     conda:
         "stacks-2.65"
     resources:
-        cpus=24,
-        mem_mb=89760,
-        time="5-00:00:00",
-        qos="long"
+        cpus=48,
+        mem_mb=179520,
+        time="24:00:00"
     log:
         "results/lib2_6frogs/logs/stacks_denovo/ustacks/{sample}.log"
     benchmark:

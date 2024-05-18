@@ -4,7 +4,7 @@ executor: cluster-generic
 cluster-generic-submit-cmd:
   mkdir -p results/lib2_6frogs/slurm_logs/{rule} &&
   sbatch
-    --partition=amilan,csu
+    --partition=amilan
     --cpus-per-task={threads}
     --mem={resources.mem_mb}
     --time={resources.time}
@@ -19,7 +19,7 @@ cluster-generic-cancel-nargs: 4000
 default-resources:
   - time="08:00:00"
   - mem_mb=3740
-  - qos=normal
+  - qos="normal"
   - tmpdir="results/lib2_6frogs/snake-tmp"
 restart-times: 0
 max-jobs-per-second: 10
